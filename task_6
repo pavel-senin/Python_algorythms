@@ -1,0 +1,9 @@
+num = int(input ("Input the number >> "))
+left = num//1000
+right = num %1000
+left = left//100 + left//10%10 + left%10
+right = right//100 + right//10%10 + right%10
+if (left == right):
+    print("lucky")
+else:
+    print ("not lucky")
