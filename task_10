@@ -1,0 +1,19 @@
+import random as rn
+n = rn.randint(2,100)
+table=[]
+for i in range (0,n,1):
+    table.append(rn.randint(0,1))
+zeros = 0
+for i in range (0,n,1):
+    print(table[i])
+for i in range (0,n,1):
+    if table[i] == 0:
+        zeros=zeros+1
+print('Длина массива>>',n )
+print(zeros,"\n ")
+if zeros == len(table)//2:
+    print ("Поровну -  переверните 19 ", zeros)
+elif (zeros < len(table)//2):
+    print ("Нужно перевернуть", zeros)
+else:
+    print ("Нужно перевернуть ", len(table)-zeros)
