@@ -1,0 +1,47 @@
+rusPoint1 = ['А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т']
+rusPoint2 = ['Д', 'К', 'Л', 'М', 'П', 'У']
+rusPoint3 = ['Б', 'Г', 'Ё', 'Ь', 'Я']
+rusPoint4 = ['Й', 'Ы']
+rusPoint5 = ['Ж', 'З', 'Х', 'Ц', 'Ч']
+rusPoint8 = ['Ш', 'Э', 'Ю']
+rusPoint10 = ['Ф', 'Щ', 'Ъ']
+engPoint1 = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R']
+engPoint2 = ['D', 'G']
+engPoint3 = ['B', 'C', 'M', 'P']
+engPoint4 = ['F', 'H', 'V', 'W', 'Y']
+engPoint5 = ['K']
+engPoint8 = ['J', 'X']
+engPoint10 = ['Q', 'Z']
+N = str(input ("input N >>"))
+N = N.upper()
+res=0
+for i in N:
+    if (i in rusPoint1):
+        res=res+1
+    if (i in rusPoint2):
+        res=res+2
+    if (i in rusPoint3):
+        res=res+3
+    if (i in rusPoint4):
+        res=res+4
+    if (i in rusPoint5):
+        res=res+5
+    if (i in rusPoint8):
+        res=res+8
+    if (i in rusPoint10):
+        res=res+10
+    if (i in engPoint1):
+        res=res+1
+    if (i in engPoint2):
+        res=res+2
+    if (i in engPoint3):
+        res=res+3
+    if (i in engPoint4):
+        res=res+4
+    if (i in engPoint5):
+        res=res+5
+    if (i in engPoint8):
+        res=res+8
+    if (i in engPoint10):
+        res=res+10
+print (res)
