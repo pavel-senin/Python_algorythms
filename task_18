@@ -1,0 +1,19 @@
+import random as rn
+
+N = int(input ("input N >>"))
+X = int(input ("input X>>"))
+res = N
+l=[]
+for i in range (0,N):
+    l.append(rn.randint(0,N))
+print(X)
+print(l)
+delta = abs(l[i]-X)
+for i in range(len(l)):
+    if (delta == abs(l[i]-X)):
+        if l[i] < res:
+            res = l[i]
+    if delta > abs(l[i]-X):
+        delta = abs(l[i]-X)
+        res = l[i]
+print(res)
