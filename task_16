@@ -1,0 +1,13 @@
+import random as rn
+N = int(input ("input N >>"))
+X = int(input ("input X>>"))
+res = 0
+l=[]
+for i in range (0,N):
+    l.append(rn.randint(0,N//2))
+print(X)
+print(l)
+for i in range(len(l)):
+    if l[i] == X:
+        res=res+1
+print(res)
