@@ -1,0 +1,12 @@
+import random as r
+def powerOfNumber(A, B):
+    if (B==0):
+        return 1
+    else:
+        return A*powerOfNumber(A,B-1)
+
+a = int(input('Input A>>'))
+print()
+b = int(input('Input B>>'))
+print()
+print (powerOfNumber(a,b))
