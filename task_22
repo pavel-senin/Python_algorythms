@@ -1,0 +1,22 @@
+import random as r
+n = int(input('input n>>'))
+print()
+m = int(input('input m>>'))
+print()
+l1=[]
+for i in range (0,n):
+    l1.append(r.randint(0,2*(n+m)))
+l2=[]
+for i in range (0,m):
+    l2.append(r.randint(0,2*(n+m)))
+print(l1)
+print(l2)
+res = []
+l1 = set(l1)
+for item in l1:
+    if item in l2:
+        res.append(item)
+if len(res)!=0:
+    print ('result is', res)
+else:
+    print ('no matches')
