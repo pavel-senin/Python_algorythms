@@ -1,0 +1,12 @@
+import random as r
+n = int(input('Input n>>'))
+print()
+l1=[]
+for i in range (0,n):
+    l1.append(r.randint(0,2*(n)))
+print('Berries: ', l1)
+res = 0
+for i in range(len(l1)-1):
+    if ((l1[i-1]+l1[i]+l1[i+1])>res):
+        res = l1[i-1]+l1[i]+l1[i+1]
+print('Maximum number of berries is ', res)
