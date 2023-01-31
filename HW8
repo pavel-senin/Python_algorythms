@@ -1,0 +1,86 @@
+def solver(expr):
+    i=0
+    a = len(expr)
+    while i<a:
+        if (expr[i]=="^"):
+            expr[i-1]=float(float(expr[i-1])**float(expr[i+1]))
+            expr.pop(i+1)
+            expr.pop(i)
+            i=i-1
+            a = len(expr)
+        else:
+            i=i+1
+    i=0
+    a = len(expr)
+    while i<a:
+        if (expr[i]=="*" or expr[i]=="/"):
+            if (expr[i]=="*"):
+                expr[i-1]=float(float(expr[i-1])*float(expr[i+1]))
+                expr.pop(i+1)
+                expr.pop(i)
+            else:
+                expr[i-1]=float(float(expr[i-1])/float(expr[i+1]))
+                expr.pop(i+1)
+                expr.pop(i)
+            i=i-1
+            a = len(expr)
+        else:
+            i=i+1
+    i=0
+    a = len(expr)
+    while i<a:
+        if (expr[i]=="+" or expr[i]=="-"):
+            if (expr[i]=="+"):
+                expr[i-1]=float(float(expr[i-1])+float(expr[i+1]))
+                expr.pop(i+1)
+                expr.pop(i)
+            else:
+                expr[i-1]=float(float(expr[i-1])-float(expr[i+1]))
+                expr.pop(i+1)
+                expr.pop(i)
+            i=i-1
+            a = len(expr)
+        else:
+            i=i+1    
+    return float(expr[0])
+
+
+def parser(expr):
+    str(expr)
+    expr=expr.replace(' ','')
+    res = []
+    i=0
+    while (i<len(expr)):
+        if (expr[i]=='+'):
+            res.append('+')
+            i=i+1
+        elif (expr[i]=='-'):
+            res.append('-')
+            i=i+1
+        elif (expr[i]=='*'):
+            res.append('*')
+            i=i+1
+        elif (expr[i]=='/'):
+            res.append('/')
+            i=i+1
+        elif (expr[i]=='^'):
+            res.append('^')
+            i=i+1
+        else:
+            j=i
+            literal = ""
+            while (expr[j]!='+' and expr[j]!='-' and expr[j]!='*' and expr[j]!='/' and expr[j]!='^' and j<len(expr)):
+                literal = literal + str(expr[j])
+                j=j+1
+                if (j>=len(expr)):
+                    break
+            i=j
+            res.append(literal)
+    return res
+
+
+expr = input('Введите выражение: ')
+expr = parser(expr)
+print(expr)
+expr = solver(expr)
+print(expr)
